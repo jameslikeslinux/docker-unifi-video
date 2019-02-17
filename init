@@ -8,4 +8,4 @@
 
 trap '/etc/init.d/unifi-video stop' TERM
 /etc/init.d/unifi-video start
-while /etc/init.d/unifi-video status > /dev/null; do sleep 1 done
+while /etc/init.d/unifi-video status > /dev/null; do sleep 1; done
