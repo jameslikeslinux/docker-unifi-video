@@ -13,8 +13,7 @@ RUN apt-get update \
  && apt-get remove --purge --auto-remove -y wget \
  && rm -rf /var/cache/apt/lists/*
 
-# The unifi-video script attempts to set the max core file size which fails in
-# a docker container.
+# Can't run ulimit in a container
 RUN sed -i 's/ulimit.*//' /usr/sbin/unifi-video
 
 COPY init /
