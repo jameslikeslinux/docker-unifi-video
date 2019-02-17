@@ -8,8 +8,9 @@ port and uid mapping.  The result is a Dockerfile and init script a fraction of
 the size of the popular
 [`pducharme/unifi-video-controller`](https://hub.docker.com/r/pducharme/unifi-video-controller/)
 image.  Because this image remains so close to a supported configuration, we
-can more quickly respond to software updates without having to employ
-[hacks](https://github.com/pducharme/UniFi-Video-Controller/pull/127).
+can more quickly respond to software updates with fewer
+[hacks](https://github.com/pducharme/UniFi-Video-Controller/pull/127) than
+others.
 
 ## Usage
 
@@ -44,10 +45,10 @@ Finally, run the container as follows:
 docker run \
   --name unifi-video \
   --net video \
-  --ip 192.168.100.1 \
+  --ip 192.168.100.2 \
   -v unifi-video:/var/lib/unifi-video \
-  --cap-add SYS_ADMIN \
   --cap-add DAC_READ_SEARCH \
+  --cap-add SYS_ADMIN \
   --sysctl net.ipv4.ip_unprivileged_port_start=0 \
   iamjamestl/unifi-video
 ```
