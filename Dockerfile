@@ -7,7 +7,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update \
  && apt-get install -y wget \
- && wget --progress=dot:mega https://dl.ubnt.com/firmwares/ufv/v3.10.5/unifi-video.Ubuntu18.04_amd64.v3.10.5.deb -O unifi-video.deb \
+ && wget --progress=dot:mega https://dl.ubnt.com/firmwares/ufv/v3.10.6-beta.1/unifi-video.Ubuntu18.04_amd64.v3.10.6-beta.1.deb -O unifi-video.deb \
  && apt install -y ./unifi-video.deb \
  && rm -f unifi-video.deb \
  && apt-get remove --purge --auto-remove -y wget \
